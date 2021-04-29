@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Banner /> should render the heading 1`] = `
+exports[`<Banner /> should render the banner 1`] = `
 .c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -65,6 +65,16 @@ exports[`<Banner /> should render the heading 1`] = `
 .c4 strong {
   color: #F231A5;
   font-weight: 600;
+}
+
+@media (max-width:768px) {
+  .c0 .sc-gsDJrp {
+    right: 0;
+  }
+
+  .c0 .sc-gsDJrp::before {
+    display: none;
+  }
 }
 
 @media (min-width:768px) {

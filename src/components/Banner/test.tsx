@@ -12,7 +12,7 @@ const props = {
 }
 
 describe('<Banner />', () => {
-  it('should render the heading', () => {
+  it('should render the banner', () => {
     const { container } = renderWithTheme(<Banner {...props} />)
 
     expect(
@@ -26,5 +26,22 @@ describe('<Banner />', () => {
     expect(screen.getByRole('img', { name: /Defy death/i })).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
+  })
+
+  it('should render a ribbon at the banner', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="My ribbon"
+        ribbonSize="small"
+        ribbonColor="secondary"
+      />
+    )
+
+    const ribbon = screen.getByText(/My ribbon/i)
+
+    expect(ribbon).toBeInTheDocument()
+    expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' })
+    expect(ribbon).toHaveStyle({ height: '2.6rem', fontSize: '1.2rem' })
   })
 })
