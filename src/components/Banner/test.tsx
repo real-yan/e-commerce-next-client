@@ -6,7 +6,7 @@ import Banner from '.'
 const props = {
   img: 'https://source.unsplash.com/user/willianjusten/1042x500',
   title: 'Defy death',
-  subTitle: '<p>Play the new <strong>CrashLands</strong> season',
+  subtitle: '<p>Play the new <strong>CrashLands</strong> season',
   buttonLabel: 'Buy now',
   buttonLink: '/games/defy-death'
 }
@@ -20,7 +20,9 @@ describe('<Banner />', () => {
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { name: /Play the new CrashLands season/i })
+      screen.getByRole('heading', {
+        name: /Play the new CrashLands season/i
+      })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('img', { name: /Defy death/i })).toBeInTheDocument()
