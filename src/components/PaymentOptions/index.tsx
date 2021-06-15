@@ -8,7 +8,7 @@ import Radio from 'components/Radio'
 import * as S from './styles'
 
 export type PaymentOptionsProps = {
-  cards?: PaymentCard[]
+  cards: PaymentCard[]
   handlePayment: () => void
 }
 
@@ -29,7 +29,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
         </Heading>
 
         <S.CardsList>
-          {cards?.map((card) => (
+          {cards.map((card) => (
             <S.CardItem key={card.number}>
               <S.CardInfo>
                 <img src={card.img} alt={card.flag} />
